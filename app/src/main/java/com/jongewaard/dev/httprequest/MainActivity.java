@@ -20,10 +20,15 @@ public class MainActivity extends AppCompatActivity {
         String json =
         "{" +
               "id: 0," +
-              "city: {" +
-                    "id: 1," +
-                    "name: 'Buenos Aires'" +
-              "}" +
+              "city: [" +
+                    "{" +
+                        "id: 1," +
+                        "name: 'London'" +
+                    "}," +
+                "{" +
+                "id: 1," +
+                "name: 'Buenos Aires'" +
+              "}]" +
         "}";
 
         City city = null;
