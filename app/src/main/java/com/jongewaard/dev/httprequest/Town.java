@@ -1,7 +1,10 @@
 package com.jongewaard.dev.httprequest;
 
+import android.annotation.SuppressLint;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -12,6 +15,7 @@ import java.util.List;
 public class Town {
 
     public int id;
+    @SerializedName("ciudades")
     public List<City> cities;
 
     public Town(){}
