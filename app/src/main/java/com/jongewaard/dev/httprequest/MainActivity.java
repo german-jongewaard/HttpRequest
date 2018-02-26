@@ -17,25 +17,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String json =
-        "{" +
-              "id: 0," +
-              "ciudades: [" +
-                    "{" +
-                        "id: 1," +
-                        "name: 'London'" +
-                    "}," +
-                "{" +
-                "id: 2," +
-                "name: 'Buenos Aires'" +
-              "}]" +
-        "}";
-
-        City city = null;
-
-        Gson gson = new GsonBuilder().create();
-
-        Town town = gson.fromJson(json, Town .class);
-
     }
 }
