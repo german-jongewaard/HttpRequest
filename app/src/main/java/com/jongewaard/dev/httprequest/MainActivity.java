@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         "{" +
               "id: 0," +
               "city: {" +
-                    "id: '1'," +
+                    "id: 1," +
                     "name: 'Buenos Aires'" +
               "}" +
         "}";
@@ -31,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new GsonBuilder().create();
 
         Town town = gson.fromJson(json, Town .class);
-
-        Toast.makeText(this, town.getId() +  " -- " + town.getCity(), Toast.LENGTH_LONG).show();
-
-        //Toast.makeText(this, city.getId() +  " -- " + city.getName(), Toast.LENGTH_LONG).show();
-
 
     }
 }
