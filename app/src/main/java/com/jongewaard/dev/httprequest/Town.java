@@ -3,6 +3,8 @@ package com.jongewaard.dev.httprequest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.List;
+
 /**
  * Created by german on 26-2-18.
  */
@@ -10,13 +12,13 @@ import com.google.gson.GsonBuilder;
 public class Town {
 
     public int id;
-    public City city;
+    public List<City> cities;
 
     public Town(){}
 
-    public Town(int id, City city){
+    public Town(int id, List<City> cities){
         this.id = id;
-        this.city = city;
+        this.cities = cities;
     }
 
     public int getId() {
@@ -27,19 +29,19 @@ public class Town {
         this.id = id;
     }
 
-    public City getCity() {
-        return city;
+    public List<City> getCity() {
+        return cities;
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public void setCity(List<City> city) {
+        this.cities = cities;
     }
 
     public City parseJSON(String response){
 
         Gson gson = new GsonBuilder().create();
-        City city = gson.fromJson(response, City.class);
-        return city;
+        City cities = gson.fromJson(response, City.class);
+        return cities;
 
     }
 }
