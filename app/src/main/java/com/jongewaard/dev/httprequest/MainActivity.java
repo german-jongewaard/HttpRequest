@@ -21,20 +21,18 @@ public class MainActivity extends AppCompatActivity {
         "{" +
               "id: 0," +
               "city: {" +
-                    "id: 'London'," +
-                    "name: 'London'" +
+                    "id: '1'," +
+                    "name: 'Buenos Aires'" +
               "}" +
         "}";
 
         City city = null;
 
-
-
         Gson gson = new GsonBuilder().create();
 
-        City city1 = gson.fromJson(json, City.class);
+        Town town = gson.fromJson(json, Town .class);
 
-        Toast.makeText(this, city1.getId() +  " -- " + city1.getName(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, town.getId() +  " -- " + town.getCity(), Toast.LENGTH_LONG).show();
 
         //Toast.makeText(this, city.getId() +  " -- " + city.getName(), Toast.LENGTH_LONG).show();
 
