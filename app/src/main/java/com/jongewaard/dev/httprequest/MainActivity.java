@@ -28,23 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         City city = null;
 
-        try {
 
-            JSONObject mJson = new JSONObject(json);
-
-            int id = mJson.getInt("id");
-
-            String name = mJson.getString("name");
-
-            city = new City(id, name);
-
-        }catch (JSONException e)
-        {
-            e.printStackTrace();
-        }
-
-
-        //Gson gson = new Gson();
 
         Gson gson = new GsonBuilder().create();
 
