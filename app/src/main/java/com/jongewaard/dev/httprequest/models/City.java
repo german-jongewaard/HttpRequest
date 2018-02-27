@@ -2,6 +2,7 @@ package com.jongewaard.dev.httprequest.models;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by german on 26-2-18.
@@ -11,7 +12,8 @@ public class City {
 
     private int id;
     private String name;
-    private Temperature temperature;
+
+    @SerializedName("main") private Temperature temperature;
 
 
     public City(){ }
