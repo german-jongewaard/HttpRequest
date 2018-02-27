@@ -1,16 +1,12 @@
-package com.jongewaard.dev.httprequest;
+package com.jongewaard.dev.httprequest.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
+import com.jongewaard.dev.httprequest.City;
+import com.jongewaard.dev.httprequest.R;
+import com.jongewaard.dev.httprequest.WeatherService;
 
 import retrofit2.*;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -29,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         WeatherService service = retrofit.create(WeatherService.class);
 
-        Call<City> cityCall = service.getCity("London, GB", "");
+        Call<City> cityCall = service.getCity("Nimes,FR", "");
 
         cityCall.enqueue(new Callback<City>() {
             @Override
