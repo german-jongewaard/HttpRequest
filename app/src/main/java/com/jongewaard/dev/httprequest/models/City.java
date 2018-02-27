@@ -1,5 +1,8 @@
 package com.jongewaard.dev.httprequest.models;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 /**
  * Created by german on 26-2-18.
  */
@@ -40,5 +43,12 @@ public class City {
 
     public void setTemperature(Temperature temperature) {
         this.temperature = temperature;
+    }
+
+    public static Temperature parseJSON(String response){
+
+        Gson gson = new GsonBuilder().create();
+        Temperature temp = gson.fromJson(response, Temperature.class);
+        return temp;
     }
 }
