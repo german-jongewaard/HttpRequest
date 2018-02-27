@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<City>> call, Throwable t) {
+
                 Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_LONG).show();
             }
         });
