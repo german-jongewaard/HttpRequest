@@ -1,4 +1,6 @@
-package com.jongewaard.dev.httprequest;
+package com.jongewaard.dev.httprequest.api.apiServices;
+
+import com.jongewaard.dev.httprequest.models.City;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

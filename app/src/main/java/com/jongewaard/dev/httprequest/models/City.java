@@ -1,4 +1,4 @@
-package com.jongewaard.dev.httprequest;
+package com.jongewaard.dev.httprequest.models;
 
 /**
  * Created by german on 26-2-18.
