@@ -12,10 +12,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
+import retrofit2.*;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
 
         WeatherService service = retrofit.create(WeatherService.class);
 
-        Call<List<City>> cityCall = service.getCity("Nîmes, FR", "");
+        Call<City> cityCall = service.getCity("London, GB", "");
 
-        cityCall.enqueue(new Callback<List<City>>() {
+        cityCall.enqueue(new Callback<City>() {
             @Override
-            public void onResponse(Call<List<City>> call, Response<List<City>> response) {
+            public void onResponse(Call<City> call, Response<City> response) {
 
-                List<City> city = response.body();
+                City city = response.body();
             }
 
             @Override
-            public void onFailure(Call<List<City>> call, Throwable t) {
+            public void onFailure(Call<City> call, Throwable t) {
 
                 Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_LONG).show();
             }

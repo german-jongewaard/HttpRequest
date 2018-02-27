@@ -1,7 +1,5 @@
 package com.jongewaard.dev.httprequest;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -15,6 +13,6 @@ public interface WeatherService {
 
     //http://samples.openweathermap.org/data/2.5/forecast?id
     @GET("weather")
-    Call<List<City>> getCity(@Query("q") String city, @Query("appid") String key);
+    Call<City> getCity(@Query("q") String city, @Query("appid") String key);
 
 }
