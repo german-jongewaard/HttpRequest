@@ -1,16 +1,19 @@
 package com.jongewaard.dev.httprequest.models;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by german on 27-2-18.
  */
 
 public class Temperature {
 
-    private float temp;
+
+    @SerializedName("main") private float temp;
     private float pressure;
     private float humidity;
-    private float tempMin;
-    private float tempMax;
+    @SerializedName("temp_min") private float tempMin;
+    @SerializedName("temp_max") private float tempMax;
     private float visibility;
 
     public Temperature(){}
