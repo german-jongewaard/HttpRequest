@@ -13,7 +13,8 @@ import retrofit2.http.Query;
 
 public interface WeatherService {
 
-    @GET("users/{user}/repos")
-    Call<List<City>> listRepos(@Query("user") String user);
+    //http://samples.openweathermap.org/data/2.5/forecast?id
+    @GET("weather")
+    Call<List<City>> getCity(@Query("q") String city, @Query("appid") String key);
 
 }
