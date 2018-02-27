@@ -16,6 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,11 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://samples.openweathermap.org/data/2.5/")
+                .addConverterFactory(GsonConverterFactory.create())//esto crea una factoria de Gson que se le agrega a Retrofit
                 .build();
 
         WeatherService service = retrofit.create(WeatherService.class);
 
-        Call<List<City>> cityCall = service.getCity("Nîmes, FR", "0a0984a822dcade518f5a8082fc42347");
+        Call<List<City>> cityCall = service.getCity("Nîmes, FR", "");
 
         cityCall.enqueue(new Callback<List<City>>() {
             @Override
