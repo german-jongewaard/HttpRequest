@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://samples.openweathermap.org/data/2.5/")
+                .baseUrl("http://api.openweathermap.org/data/2.5/")
+        //"http://samples.openweathermap.org/data/2.5/"
                 .addConverterFactory(GsonConverterFactory.create())//esto crea una factoria de Gson que se le agrega a Retrofit
                 .build();
 
