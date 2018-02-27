@@ -10,6 +10,11 @@ import com.google.gson.GsonBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         WeatherService service = retrofit.create(WeatherService.class);
+
+        Call<List<City>> cityCall = service.getCity("Nîmes, FR", "0a0984a822dcade518f5a8082fc42347");
+
+        cityCall.enqueue(new Callback<List<City>>() {
+            @Override
+            public void onResponse(Call<List<City>> call, Response<List<City>> response) {
+
+                List<City> city = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<List<City>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 }
