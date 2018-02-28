@@ -6,12 +6,14 @@ package com.jongewaard.dev.httprequest.models;
 
 public class City {
 
-    public int id;
-    public String name;
+    private int id;
+    private String name;
+    private Temperature temperature;
+
 
     public City(){ }
 
-    public City(int id, String name) {
+    public City(int id, String name, Temperature temperature) {
         this.id = id;
         this.name = name;
     }

@@ -14,6 +14,8 @@ import retrofit2.*;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         WeatherService service = API.getApi().create(WeatherService.class);
 
-        Call<City> cityCall = service.getCity("Nimes,FR", "");
+        Call<City> cityCall = service.getCityCelsius("Nimes,FR", API.APPKEY, "metric");
 
         cityCall.enqueue(new Callback<City>() {
             @Override
