@@ -33,4 +33,12 @@ public class City {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Temperature getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Temperature temperature) {
+        this.temperature = temperature;
+    }
 }
