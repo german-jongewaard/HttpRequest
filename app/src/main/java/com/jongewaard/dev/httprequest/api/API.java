@@ -13,6 +13,8 @@ public class API {
 
     private static Retrofit retrofit = null;
 
+    public static final String APPKEY = "NO-KEY";
+
     //pequeño sigelton - crear una instancia para reutilizarla.
 
     public static Retrofit getApi(){
