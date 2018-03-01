@@ -18,9 +18,12 @@ public class MyDeserializer implements JsonDeserializer<City>{
 
         int id = json.getAsJsonObject().get("id").getAsInt();
 
-        String nombre = json.getAsJsonObject().get("name").getAsString();
+        String name = json.getAsJsonObject().get("name").getAsString();
 
+        String country = json.getAsJsonObject().get("sys").getAsJsonObject().get("country").getAsString();
 
-        return null;
+        City city = new City(id, name, country);
+
+        return city;
     }
 }
