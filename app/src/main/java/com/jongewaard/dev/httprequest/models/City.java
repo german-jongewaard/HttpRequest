@@ -12,15 +12,17 @@ public class City {
 
     private int id;
     private String name;
+    private String country;
 
     //@SerializedName("main") private Temperature temperature;
 
 
     public City(){ }
 
-    public City(int id, String name/*, Temperature temperature*/) {
+    public City(int id, String name, String country/*, Temperature temperature*/) {
         this.id = id;
         this.name = name;
+        this.country = country;
         //this.temperature = temperature;
     }
 
@@ -38,6 +40,14 @@ public class City {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     /*public Temperature getTemperature() {
