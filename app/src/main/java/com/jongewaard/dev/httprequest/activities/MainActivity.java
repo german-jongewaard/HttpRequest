@@ -13,6 +13,7 @@ import com.jongewaard.dev.httprequest.api.API;
 import com.jongewaard.dev.httprequest.models.City;
 import com.jongewaard.dev.httprequest.R;
 import com.jongewaard.dev.httprequest.api.apiServices.WeatherService;
+import com.squareup.picasso.Picasso;
 
 import retrofit2.*;
 

@@ -9,30 +9,31 @@ import com.google.gson.annotations.SerializedName;
 public class Temperature {
 
 
-    @SerializedName("main") private float temp;
+    @SerializedName("temp")
+    private float temperature;
     private float pressure;
     private float humidity;
-    @SerializedName("temp_min") private float tempMin;
-    @SerializedName("temp_max") private float tempMax;
-    private float visibility;
+    @SerializedName("temp_min")
+    private float tempMin;
+    @SerializedName("temp_max")
+    private float tempMax;
 
     public Temperature(){}
 
-    public Temperature(float temp, float pressure, float humidity, float tempMin, float tempMax, float visibility) {
-        this.temp = temp;
+    public Temperature(float temperature, float pressure, float humidity, float tempMin, float tempMax) {
+        this.temperature = temperature;
         this.pressure = pressure;
         this.humidity = humidity;
         this.tempMin = tempMin;
         this.tempMax = tempMax;
-        this.visibility = visibility;
     }
 
-    public float getTemp() {
-        return temp;
+    public float getTemperature() {
+        return temperature;
     }
 
-    public void setTemp(float temp) {
-        this.temp = temp;
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
     }
 
     public float getPressure() {
@@ -65,13 +66,5 @@ public class Temperature {
 
     public void setTempMax(float tempMax) {
         this.tempMax = tempMax;
-    }
-
-    public float getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(float visibility) {
-        this.visibility = visibility;
     }
 }
