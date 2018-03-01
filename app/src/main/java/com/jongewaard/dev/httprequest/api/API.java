@@ -31,7 +31,7 @@ public class API {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     //esto crea una factoria de Gson que se le agrega a Retrofit
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(builder.create()))
                     .build();
         }
         return retrofit;
