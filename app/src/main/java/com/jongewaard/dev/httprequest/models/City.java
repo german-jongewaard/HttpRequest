@@ -46,12 +46,12 @@ public class City {
 
     public void setTemperature(Temperature temperature) {
         this.temperature = temperature;
-    }*/
+    }
 
     public static Temperature parseJSON(String response){
 
         Gson gson = new GsonBuilder().create();
         Temperature temp = gson.fromJson(response, Temperature.class);
         return temp;
-    }
+    }*/
 }
