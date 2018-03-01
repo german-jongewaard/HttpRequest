@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         WeatherService service = API.getApi().create(WeatherService.class);
 
-        Call<City> cityCall = service.getCityCelsius("Nimes,FR", API.APPKEY, "metric");
+        Call<City> cityCall = service.getCityCelsius("Buenos Aires,AR", API.APPKEY, "metric");
 
         cityCall.enqueue(new Callback<City>() {
             @Override
