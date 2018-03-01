@@ -1,5 +1,9 @@
 package com.jongewaard.dev.httprequest.api;
 
+import com.google.gson.GsonBuilder;
+import com.jongewaard.dev.httprequest.api.dedeserializers.MyDeserializer;
+import com.jongewaard.dev.httprequest.models.City;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -13,13 +17,17 @@ public class API {
 
     private static Retrofit retrofit = null;
 
-    public static final String APPKEY = "NO-KEY";
+    public static final String APPKEY = "";
 
     //pequeño sigelton - crear una instancia para reutilizarla.
 
     public static Retrofit getApi(){
         //si es Nulo lo creamos y sino lo devuelve.
         if(retrofit == null){
+            GsonBuilder builder = new GsonBuilder();
+            //de esta forma estoy registrando mi Deserializador
+            builder.registerTypeAdapter(City.class, new MyDeserializer());
+
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     //esto crea una factoria de Gson que se le agrega a Retrofit
