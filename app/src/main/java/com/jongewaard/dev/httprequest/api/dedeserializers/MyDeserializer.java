@@ -16,6 +16,9 @@ public class MyDeserializer implements JsonDeserializer<City>{
     @Override
     public City deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
 
+        int id = json.getAsJsonObject().get("id").getAsInt();
+
+        String nombre = json.getAsJsonObject().get("name").getAsString();
 
 
         return null;
