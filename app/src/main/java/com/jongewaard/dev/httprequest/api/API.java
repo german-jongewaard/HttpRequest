@@ -14,29 +14,28 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class API {
 
     public static final String BASE_URL = "http://api.openweathermap.org/data/2.5/";
+    public static final String BASE_ICONS = "http://openweathermap.org/img/w/";
+    public static final String EXTENSION_ICONS = ".png";
 
     private static Retrofit retrofit = null;
 
     public static final String APPKEY = "";
 
-    //pequeño sigelton - crear una instancia para reutilizarla.
+
 
     public static Retrofit getApi(){
-        //si es Nulo lo creamos y sino lo devuelve.
-        if(retrofit == null){
+        if (retrofit == null) {
+
             GsonBuilder builder = new GsonBuilder();
-            //de esta forma estoy registrando mi Deserializador
             builder.registerTypeAdapter(City.class, new MyDeserializer());
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    //esto crea una factoria de Gson que se le agrega a Retrofit
                     .addConverterFactory(GsonConverterFactory.create(builder.create()))
                     .build();
         }
         return retrofit;
     }
 
-
-
 }
+
